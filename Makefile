@@ -1,4 +1,4 @@
-OBJECTS = loader.o kmain.o
+OBJECTS = loader.o kmain.o framebuffer.o io.o stdio.o
 CC = gcc
 CFLAGS = -m32 -nostdlib -nostdinc -fno-builtin -fno-stack-protector \
 		 -nostartfiles -nodefaultlibs -Wall -Wextra -Werror -c
@@ -25,7 +25,7 @@ os.iso: kernel.elf
 	iso
 
 run: os.iso
-	echo "ISO MADE"
+	bochs -f bochsrc.txt -q
 
 %.o: %.c
 	$(CC) $(CFLAGS) $< -o $@

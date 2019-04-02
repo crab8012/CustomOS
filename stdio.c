@@ -6,7 +6,7 @@
  *  @param str The string to be printed
  *  @param len The length of the string to be printed.
  */
-void printf(const char str[], int size){
+void printf(const char *str, int size){
     for(int i = 0; i < size; i++){
         fb_write_cell(i*2, str[i], 'B', '0');
     }

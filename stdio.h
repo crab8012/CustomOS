@@ -5,9 +5,8 @@
  *  Writes a string a given length to the framebuffer
  * 
  *  @param str The string to be printed
- *  @param len The length of the string to be printed.
  */
-void printf(const char str[], int size);
+void printf(const char *str;
 
 /** testColors:
  *  Prints out the color code for the foreground and background characters

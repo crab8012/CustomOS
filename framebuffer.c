@@ -26,6 +26,8 @@ char *fb = (char *) 0x000B8000;
  *  Writes a character with the given foreground and background to position i
  *  in the framebuffer.
  * 
+ *  Background is first set of bits
+ * 
  *  @param i  The location in the framebuffer
  *  @param c  The character
  *  @param fg The foreground color
@@ -33,5 +35,5 @@ char *fb = (char *) 0x000B8000;
  */
 void fb_write_cell(unsigned int i, char c, unsigned char fg, unsigned char bg){
     fb[i] = c;
-    fb[i + 1] = ((fg & 0x0F) << 4) | (bg & 0x0F);
+    fb[i + 1] = ((bg & 0x0F) << 4) | (fg & 0x0F);
 }
